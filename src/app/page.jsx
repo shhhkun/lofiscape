@@ -3,11 +3,11 @@ import React from "react";
 import AmbianceButton from "./components/AmbianceButton";
 
 const AmbianceSounds = [
-  { name: "Rain", fileUrl: "/rain.wav" },
-  { name: "Storm", fileUrl: "/storm.wav" },
-  { name: "Wind", fileUrl: "" },
-  { name: "Waves", fileUrl: "" },
-  { name: "Campfire", fileUrl: "" },
+  { name: "Rain", fileUrl: "/rain.m4a" },
+  { name: "Storm", fileUrl: "/storm.m4a" },
+  { name: "Wind", fileUrl: "/wind.m4a" },
+  { name: "Waves", fileUrl: "/wind.m4a" },
+  { name: "Campfire", fileUrl: "/wind.m4a" },
 ];
 
 export default function HomePage() {
