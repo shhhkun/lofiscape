@@ -17,6 +17,7 @@ export default function HomePage() {
             <AmbianceButton ambiance={"Storm"} />
             <AmbianceButton ambiance={"Wind"} />
             <AmbianceButton ambiance={"Waves"} />
+            <AmbianceButton ambiance={"Campfire"} />
           </div>
         </div>
       </main>

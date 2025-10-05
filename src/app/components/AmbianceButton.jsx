@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { CloudRain, CloudLightning, Wind, Waves } from "@phosphor-icons/react";
+import { CloudRain, CloudLightning, Wind, Waves, Campfire } from "@phosphor-icons/react";
 import VolumeBar from "./VolumeBar";
 
 const icon = {
@@ -7,6 +7,7 @@ const icon = {
   Storm: CloudLightning,
   Wind: Wind,
   Waves: Waves,
+  Campfire: Campfire,
 };
 
 const AmbianceButton = ({ ambiance }) => {
