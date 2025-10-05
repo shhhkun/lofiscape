@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
-import { CloudRain, CloudLightning, Wind, Waves } from "@phosphor-icons/react";
-import VolumeBar from "./components/VolumeBar";
+import AmbianceButton from "./components/AmbianceButton";
 
 export default function HomePage() {
   return (
@@ -14,23 +13,10 @@ export default function HomePage() {
           <h1 className="text-4xl font-extrabold">Create Your Focus Scape</h1>
 
           <div className="flex flex-row flex-wrap gap-4">
-            <button className="flex items-center flex-col py-4 px-8 bg-[var(--button-bg)] hover:bg-[var(--hover)] rounded-lg gap-2">
-              <CloudRain size={48} weight="regular" />
-              <span className="font-bold">Rain</span>
-              <VolumeBar />
-            </button>
-            <button className="flex items-center flex-col py-4 px-8 bg-[var(--button-bg)] hover:bg-[var(--hover)] rounded-lg gap-2">
-              <CloudLightning size={48} weight="regular" />
-              <span className="font-bold">Storm</span>
-            </button>
-            <button className="flex items-center flex-col py-4 px-8 bg-[var(--button-bg)] hover:bg-[var(--hover)] rounded-lg gap-2">
-              <Wind size={48} weight="regular" />
-              <span className="font-bold">Wind</span>
-            </button>
-            <button className="flex items-center flex-col py-4 px-8 bg-[var(--button-bg)] hover:bg-[var(--hover)] rounded-lg gap-2">
-              <Waves size={48} weight="regular" />
-              <span className="font-bold">Waves</span>
-            </button>
+            <AmbianceButton ambiance={"Rain"} />
+            <AmbianceButton ambiance={"Storm"} />
+            <AmbianceButton ambiance={"Wind"} />
+            <AmbianceButton ambiance={"Waves"} />
           </div>
         </div>
       </main>
