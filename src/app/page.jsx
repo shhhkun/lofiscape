@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
 import AmbianceButton from "./components/AmbianceButton";
-import VolumeBar from "./components/VolumeBar";
 import PlayButton from "./components/PlayButton";
+import TrackSelection from "./components/TrackSelection";
 
 const AmbianceSounds = [
   { name: "Rain", fileUrl: "/rain.m4a" },
@@ -24,15 +24,7 @@ export default function HomePage() {
           <div className="flex flex-row flex-wrap w-full items-center bg-[var(--card-bg)] backdrop-blur-xs py-6 px-6 justify-between gap-6">
             <div className="flex flex-row items-center w-full lg:w-120 bg-[var(--button-bg)] p-4 rounded-lg gap-4">
               <PlayButton />
-              <div className="flex flex-col flex-1 min-w-0 gap-2">
-                <p className="font-bold">LoFi Track:</p>
-                <select className="bg-indigo-400 font-bold w-full pl-2 pr-32 py-2 rounded-lg">
-                  <option>Currently Playing...</option>
-                  <option>Currently Playing...</option>
-                  <option>Currently Playing...</option>
-                </select>
-                <VolumeBar />
-              </div>
+              <TrackSelection />
             </div>
 
             <div className="flex flex-row flex-wrap gap-6">
@@ -46,7 +38,6 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-
       </main>
     </div>
   );
