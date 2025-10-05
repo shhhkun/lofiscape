@@ -7,6 +7,12 @@ const useAudioCrossfade = (audioUrl, volume, isActive) => {
   const audioBufferRef = useRef(null);
   const playersRef = useRef([null, null]); // [player1, player2]
   const isReadyRef = useRef(false);
+  const currentVolumeRef = useRef(volume); // ref for current volume prop value
+
+  // update the ref whenever the volume prop changes
+  useEffect(() => {
+    currentVolumeRef.current = volume;
+  }, [volume]);
 
   // 1) Initialize audio loading
   useEffect(() => {
@@ -40,12 +46,14 @@ const useAudioCrossfade = (audioUrl, volume, isActive) => {
   }, [audioUrl]);
 
   // 2) Looping & scheduling logic
-
   const startPlayer = useCallback(
-    (playerIndex, startTime, targetVolume) => {
+    (playerIndex, startTime) => {
       const context = audioContextRef.current;
       const buffer = audioBufferRef.current;
       if (!context || !buffer || !isReadyRef.current) return;
+
+      // read the current target volume directly from the ref
+      const freshTargetVolume = currentVolumeRef.current / 100;
 
       // create source and gain node
       const source = context.createBufferSource();
@@ -75,20 +83,26 @@ const useAudioCrossfade = (audioUrl, volume, isActive) => {
         const fadeStart = context.currentTime;
         const fadeEnd = fadeStart + FADE_TIME;
 
+        // re-read the fresh volume inside the timeout before scheduling the next player
+        const scheduleTargetVolume = currentVolumeRef.current / 100;
+
         // a. start the NEXT player immediately, scheduling the next crossfade
         // pass the current volume for the new player to ramp up to
-        startPlayer(nextIndex, fadeStart, targetVolume);
+        startPlayer(nextIndex, fadeStart);
 
         // b. fade OUT the current player
         gainNode.gain.cancelScheduledValues(fadeStart);
-        gainNode.gain.linearRampToValueAtTime(targetVolume, fadeStart);
+        gainNode.gain.linearRampToValueAtTime(scheduleTargetVolume, fadeStart);
         gainNode.gain.linearRampToValueAtTime(0.0001, fadeEnd);
 
         // c. fade IN the next player
         const nextPlayer = playersRef.current[nextIndex];
         nextPlayer.gainNode.gain.cancelScheduledValues(fadeStart);
         nextPlayer.gainNode.gain.linearRampToValueAtTime(0.0001, fadeStart);
-        nextPlayer.gainNode.gain.linearRampToValueAtTime(targetVolume, fadeEnd);
+        nextPlayer.gainNode.gain.linearRampToValueAtTime(
+          scheduleTargetVolume,
+          fadeEnd
+        );
 
         // d. clean up the current player & stop after fade is complete
         setTimeout(() => {
@@ -104,7 +118,7 @@ const useAudioCrossfade = (audioUrl, volume, isActive) => {
 
       // e. fade in the player being started
       gainNode.gain.linearRampToValueAtTime(
-        targetVolume,
+        freshTargetVolume,
         startTime + FADE_TIME
       );
     },
@@ -180,7 +194,7 @@ const useAudioCrossfade = (audioUrl, volume, isActive) => {
 };
 
 const CrossfadeAmbiancePlayer = ({ audioUrl, volume, isActive }) => {
-  const { isReady } = useAudioCrossfade(audioUrl, volume, isActive);
+  useAudioCrossfade(audioUrl, volume, isActive);
 
   return null;
 };
