@@ -2,7 +2,7 @@ import React from "react";
 
 export default function VolumeBar({ volume, onVolumeChange }) {
   return (
-    <div className="flex items-center w-full py-2">
+    <div className="flex items-center py-2">
       {/* Slider bar with circle */}
       <input
         type="range"

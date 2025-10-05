@@ -1,20 +1,20 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import {
-  CloudRain,
-  CloudLightning,
-  Wind,
-  Waves,
-  Campfire,
+  CloudRainIcon,
+  CloudLightningIcon,
+  WindIcon,
+  WavesIcon,
+  CampfireIcon,
 } from "@phosphor-icons/react";
 import VolumeBar from "./VolumeBar";
 import CrossfadeAmbiancePlayer from "./CrossfadeAmbiancePlayer";
 
 const icon = {
-  Rain: CloudRain,
-  Storm: CloudLightning,
-  Wind: Wind,
-  Waves: Waves,
-  Campfire: Campfire,
+  Rain: CloudRainIcon,
+  Storm: CloudLightningIcon,
+  Wind: WindIcon,
+  Waves: WavesIcon,
+  Campfire: CampfireIcon,
 };
 
 const AmbianceButton = ({ ambiance, audioUrl }) => {
