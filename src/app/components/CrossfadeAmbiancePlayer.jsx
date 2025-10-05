@@ -190,7 +190,7 @@ const useAudioCrossfade = (audioUrl, volume, isActive) => {
     }
   }, [isActive, volume, startPlayer]);
 
-  return { isReady: isReadyRef.current };
+  //return { isReady: isReadyRef.current };
 };
 
 const CrossfadeAmbiancePlayer = ({ audioUrl, volume, isActive }) => {

@@ -1,4 +1,4 @@
-  @import "tailwindcss";
+@import "tailwindcss";
 
 :root {
   --bg: #0a0a0a;
@@ -12,7 +12,9 @@
   :root {
     --bg: #0a0a0a;
     --text: #ffffff;
-    --cardbg: #d0d0d0;
+    --card-bg: rgba(184, 182, 182, 0.5);
+    --button-bg: #d0d0d0;
+    --hover: #c0c0c0;
   }
 }
 
