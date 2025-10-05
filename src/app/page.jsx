@@ -2,6 +2,14 @@
 import React from "react";
 import AmbianceButton from "./components/AmbianceButton";
 
+const AmbianceSounds = [
+  { name: "Rain", fileUrl: "/rain.wav" },
+  { name: "Storm", fileUrl: "/storm.wav" },
+  { name: "Wind", fileUrl: "" },
+  { name: "Waves", fileUrl: "" },
+  { name: "Campfire", fileUrl: "" },
+];
+
 export default function HomePage() {
   return (
     <div>
@@ -13,11 +21,13 @@ export default function HomePage() {
           <h1 className="text-4xl font-extrabold">Create Your Focus Scape</h1>
 
           <div className="flex flex-row flex-wrap gap-4">
-            <AmbianceButton ambiance={"Rain"} />
-            <AmbianceButton ambiance={"Storm"} />
-            <AmbianceButton ambiance={"Wind"} />
-            <AmbianceButton ambiance={"Waves"} />
-            <AmbianceButton ambiance={"Campfire"} />
+            {AmbianceSounds.map((sound) => (
+              <AmbianceButton
+                key={sound.name}
+                ambiance={sound.name}
+                audioUrl={sound.fileUrl}
+              />
+            ))}
           </div>
         </div>
       </main>

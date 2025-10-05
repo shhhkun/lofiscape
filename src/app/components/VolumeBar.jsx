@@ -1,7 +1,6 @@
 import React from "react";
 
-export default function VolumeBar() {
-
+export default function VolumeBar({ volume, onVolumeChange }) {
   return (
     <div className="flex items-center w-full py-2">
       {/* Slider bar with circle */}
@@ -9,9 +8,9 @@ export default function VolumeBar() {
         type="range"
         min="0"
         max="100"
-        // Use defaultValue for a static snippet, or 'value' for controlled components
-        defaultValue="50"
-        onClick={(e) => e.stopPropagation()} // prevent interference with 
+        value={volume}
+        onChange={onVolumeChange}
+        onClick={(e) => e.stopPropagation()} // prevent interference with button
         className="
                     flex-grow h-2 bg-gray-600 rounded-lg appearance-none cursor-pointer 
                     transition-all duration-300
