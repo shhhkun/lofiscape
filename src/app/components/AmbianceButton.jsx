@@ -100,7 +100,7 @@ const AmbianceButton = ({ ambiance, audioUrl }) => {
         isActive={isActive}
       />
       <button
-        className="flex items-center flex-col p-6 bg-[var(--button-bg)] hover:bg-[var(--hover)] rounded-lg gap-2"
+        className="flex items-center flex-col p-4 bg-[var(--button-bg)] hover:bg-[var(--hover)] rounded-lg gap-2"
         onClick={handleToggle}
       >
         <div

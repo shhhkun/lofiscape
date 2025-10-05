@@ -17,22 +17,16 @@ export default function VolumeBar({ volume, onVolumeChange }) {
 
                     /* --- Webkit (Chrome, Safari) Thumb Styling --- */
                     [&::-webkit-slider-thumb]:appearance-none 
-                    [&::-webkit-slider-thumb]:h-4 
-                    [&::-webkit-slider-thumb]:w-4 
+                    [&::-webkit-slider-thumb]:h-5 
+                    [&::-webkit-slider-thumb]:w-5 
                     [&::-webkit-slider-thumb]:rounded-full
-                    [&::-webkit-slider-thumb]:shadow-lg
                     [&::-webkit-slider-thumb]:bg-indigo-400 /* Accent Color for the Circle */
-                    [&::-webkit-slider-thumb]:ring-2
-                    [&::-webkit-slider-thumb]:ring-offset-2
-                    [&::-webkit-slider-thumb]:ring-indigo-400
-                    [&::-webkit-slider-thumb]:ring-offset-gray-800
                     [&::-webkit-slider-thumb]:transition-colors
 
                     /* --- Firefox Thumb Styling --- */
                     [&::-moz-range-thumb]:h-5 
                     [&::-moz-range-thumb]:w-5 
                     [&::-moz-range-thumb]:rounded-full
-                    [&::-moz-range-thumb]:border-none
                     [&::-moz-range-thumb]:bg-indigo-400 /* Accent Color for the Circle */
                     "
       />
