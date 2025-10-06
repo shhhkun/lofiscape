@@ -23,7 +23,7 @@ export default function HomePage() {
 
         <div className="flex w-full justify-center mt-auto">
           <div className="flex flex-row flex-wrap w-full items-center bg-[var(--card-bg)] backdrop-blur-xs py-6 px-6 justify-between gap-6">
-            <div className="flex flex-row items-center w-full lg:w-120 bg-[var(--button-bg)] p-4 rounded-lg gap-4">
+            <div className="flex flex-row items-center w-full lg:w-140 bg-[var(--button-bg)] p-4 rounded-lg gap-4">
               <PlayButton />
               <TrackSelection />
             </div>

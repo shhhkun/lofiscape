@@ -50,18 +50,20 @@ const AmbianceButton = ({ ambiance, audioUrl }) => {
         isActive={isActive}
       />
       <button
-        className="flex items-center flex-col p-4 bg-[var(--button-bg)] hover:bg-[var(--hover)] rounded-lg gap-2"
+        className="flex flex-col p-4 bg-[var(--button-bg)] hover:bg-[var(--hover)] rounded-lg gap-4"
         onClick={handleToggle}
       >
-        <div
-          className={`flex justify-center rounded-full p-2 ${
-            isActive ? `bg-[var(--accent)]` : `bg-[var(--accent2)]`
-          } 
+        <div className="flex flex-col items-center gap-2">
+          <div
+            className={`flex justify-center rounded-full p-2 ${
+              isActive ? `bg-[var(--accent)]` : `bg-[var(--accent2)]`
+            } 
             transition-transform duration-300 transform hover:scale-110`}
-        >
-          <IconImage size={48} weight="regular" />
+          >
+            <IconImage size={48} weight="regular" />
+          </div>
+          <span className="font-bold">{ambiance}</span>
         </div>
-        <span className="font-bold">{ambiance}</span>
         <VolumeBar volume={volume} onVolumeChange={handleVolumeChange} />
       </button>
     </>
