@@ -9,7 +9,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${"green-theme"}`}>
-      <body>{children}</body>
+      <body>  
+        {children}
+        <script src="https://www.youtube.com/iframe_api"></script>
+      </body>
     </html>
   );
 }
