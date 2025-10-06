@@ -9,7 +9,8 @@ const PlayButton = ({}) => {
   };
   return (
     <button
-      className="flex w-12 h-12 items-center justify-center bg-indigo-400 p-2 rounded-full"
+      className="flex w-12 h-12 items-center justify-center bg-[var(--accent)] p-2 rounded-full
+                 transition-transform duration-300 transform hover:scale-110"
       onClick={handleToggle}
     >
       {isActive ? (

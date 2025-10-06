@@ -12,7 +12,7 @@ export default function VolumeBar({ volume, onVolumeChange }) {
         onChange={onVolumeChange}
         onClick={(e) => e.stopPropagation()} // prevent interference with button
         className="
-                    flex-grow h-2 bg-gray-600 rounded-lg appearance-none cursor-pointer 
+                    flex-grow h-2 bg-[var(--accent2)] rounded-lg appearance-none cursor-pointer 
                     transition-all duration-300
 
                     /* --- Webkit (Chrome, Safari) Thumb Styling --- */
@@ -20,14 +20,14 @@ export default function VolumeBar({ volume, onVolumeChange }) {
                     [&::-webkit-slider-thumb]:h-5 
                     [&::-webkit-slider-thumb]:w-5 
                     [&::-webkit-slider-thumb]:rounded-full
-                    [&::-webkit-slider-thumb]:bg-indigo-400 /* Accent Color for the Circle */
+                    [&::-webkit-slider-thumb]:bg-[var(--accent)] /* Accent Color for the Circle */
                     [&::-webkit-slider-thumb]:transition-colors
 
                     /* --- Firefox Thumb Styling --- */
                     [&::-moz-range-thumb]:h-5 
                     [&::-moz-range-thumb]:w-5 
                     [&::-moz-range-thumb]:rounded-full
-                    [&::-moz-range-thumb]:bg-indigo-400 /* Accent Color for the Circle */
+                    [&::-moz-range-thumb]:bg-[var(--accent)] /* Accent Color for the Circle */
                     "
       />
     </div>

@@ -22,58 +22,6 @@ const AmbianceButton = ({ ambiance, audioUrl }) => {
   const [volume, setVolume] = useState(50); // 0 to 100
 
   const IconImage = icon[ambiance];
-  //   const audioRef = useRef(null);
-
-  //   // audio initialization
-  //   useEffect(() => {
-  //     if (!audioRef.current) {
-  //       audioRef.current = new Audio(audioUrl); // create audio element on mount
-  //       audioRef.current.loop = true; // start loop
-  //       audioRef.current.volume = 0; // initially 0
-  //     }
-
-  //     // cleanup on umount
-  //     return () => {
-  //       if (audioRef.current) {
-  //         audioRef.current.pause();
-  //         audioRef.current = null;
-  //       }
-  //     };
-  //   }, [audioUrl]);
-
-  //   // handler sound on/off
-  //   const handleToggle = () => {
-  //     const newIsActive = !isActive; // immediately get next state
-  //     setIsActive(newIsActive); // queue state
-
-  //     // play
-  //     if (newIsActive) {
-  //       if (audioRef.current) {
-  //         audioRef.current.volume = volume / 100;
-  //         audioRef.current
-  //           .play()
-  //           .catch((e) => console.error(`Error playing ${ambiance}:`, e));
-  //       }
-  //     }
-  //     // pause
-  //     else {
-  //       if (audioRef.current) {
-  //         audioRef.current.pause();
-  //       }
-  //     }
-  //   };
-
-  //   const handleVolumeChange = (e) => {
-  //     // stop the event from bubbling up to the parent <button>
-  //     e.stopPropagation();
-
-  //     const newVolume = parseInt(e.target.value, 10);
-  //     setVolume(newVolume);
-
-  //     if (audioRef.current) {
-  //       audioRef.current.volume = newVolume / 100;
-  //     }
-  //   };
 
   // handler sound on/off
   const handleToggle = useCallback(() => {
@@ -105,8 +53,9 @@ const AmbianceButton = ({ ambiance, audioUrl }) => {
       >
         <div
           className={`flex justify-center rounded-full p-2 ${
-            isActive ? `bg-indigo-400` : `bg-gray-600`
-          }`}
+            isActive ? `bg-[var(--accent)]` : `bg-[var(--accent2)]`
+          } 
+            transition-transform duration-300 transform hover:scale-110`}
         >
           <IconImage size={48} weight="regular" />
         </div>
