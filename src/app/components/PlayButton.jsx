@@ -7,6 +7,7 @@ const PlayButton = ({}) => {
   const handleToggle = () => {
     setIsActive((prev) => !prev);
   };
+  
   return (
     <button
       className="flex w-12 h-12 items-center justify-center text-[var(--text2)] bg-[var(--accent)] p-2 rounded-full flex-shrink-0

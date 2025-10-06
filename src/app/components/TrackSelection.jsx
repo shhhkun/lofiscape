@@ -1,8 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import VolumeBar from "./VolumeBar";
-import { SpeakerSimpleHighIcon } from "@phosphor-icons/react";
+import {
+  SpeakerSimpleHighIcon,
+  SpeakerSimpleSlashIcon,
+} from "@phosphor-icons/react";
 
 const TrackSelection = () => {
+  const [isMuted, setIsMuted] = useState(false);
+
+  const handleToggle = () => {
+    setIsMuted((prev) => !prev);
+  };
+
   return (
     <div className="flex flex-row w-full items-center gap-8">
       <div className="flex flex-col gap-2">
@@ -14,7 +23,16 @@ const TrackSelection = () => {
         </select>
       </div>
       <div className="flex flex-row flex-1 gap-4">
-        <SpeakerSimpleHighIcon size={24} weight="bold" />
+        <button
+          className="transition-transform duration-300 transform hover:scale-110"
+          onClick={handleToggle}
+        >
+          {isMuted ? (
+            <SpeakerSimpleSlashIcon size={24} weight="bold" />
+          ) : (
+            <SpeakerSimpleHighIcon size={24} weight="bold" />
+          )}
+        </button>
         <VolumeBar />
       </div>
     </div>
