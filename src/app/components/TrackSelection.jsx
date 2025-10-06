@@ -10,12 +10,15 @@ import {
 // song to youtube ID mappings
 const videoMap = {
   song1: "OO2kPK5-qno",
+  song2: "X2V0ag9mCjc",
+  song3: "OO2kPK5-qno",
 };
 
 const TrackSelection = () => {
   const [isActive, setIsActive] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
   const [volume, setVolume] = useState(50); // 0 to 100
+  const [selectedTrack, setSelectedTrack] = useState("song1");
 
   const handleMute = useCallback(() => {
     const newIsMuted = !isMuted;
@@ -35,23 +38,34 @@ const TrackSelection = () => {
     [isMuted]
   );
 
+  const handleTrackChange = useCallback((e) => {
+    setSelectedTrack(e.target.value);
+  }, []);
+
   return (
     <>
       <YouTubePlayer
-        videoId={videoMap["song1"]}
+        videoId={videoMap[selectedTrack]}
         volume={volume}
         isMuted={isMuted}
         isActive={isActive}
       />
+
       <div className="flex flex-row items-center w-full lg:w-140 bg-[var(--button-bg)] p-4 rounded-lg gap-4">
         <PlayButton isActive={isActive} onPlay={handlePlay} />
         <div className="flex flex-row w-full items-center gap-8">
           <div className="flex flex-col gap-2">
             <p className="font-bold">LoFi Track:</p>
-            <select className="text-[var(--text2)] bg-[var(--accent)] font-bold p-2 rounded-lg">
-              <option>Currently Playing...</option>
-              <option>Currently Playing...</option>
-              <option>Currently Playing...</option>
+            <select
+              className="text-[var(--text2)] bg-[var(--accent)] font-bold p-2 rounded-lg"
+              value={selectedTrack}
+              onChange={handleTrackChange}
+            >
+              {Object.keys(videoMap).map((key) => (
+                <option key={key} value={key}>
+                  Currently Playing {key.charAt(0).toUpperCase() + key.slice(1)}
+                </option>
+              ))}
             </select>
           </div>
           <div className="flex flex-row flex-1 gap-4">
