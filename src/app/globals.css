@@ -2,32 +2,47 @@
 
 :root {
   --bg: #0a0a0a;
-  --text: #ffffff;
-  --card-bg: rgba(184, 182, 182, 0.5);
-  --button-bg: #d0d0d0;
-  --hover: #c0c0c0; /* ambiance button hover */
-  --accent: #818cf8;
-  --accent2: #4b5563;
+  --text: #000000;
+  --text2: #0c5326;
+  --card-bg: rgba(10, 10, 10, 0.5);
+  --button-bg: #282828;
+  --hover: #303030; /* ambiance button hover */
+  --accent: #22c55e;
+  --accent2: #383838; /* 8 level diff from button-bg */
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --bg: #0a0a0a;
     --text: #ffffff;
     --card-bg: rgba(184, 182, 182, 0.5);
     --button-bg: #d0d0d0;
     --hover: #c0c0c0;
+    --accent: #818cf8;
+    --accent2: #4b5563;
   }
+} */
+
+.cloud-theme {
+  --bg: #0a0a0a;
+  --text: #a8a8a8;
+  --text2: #4c56aa;
+  --card-bg: rgba(184, 182, 182, 0.5);
+  --button-bg: #f2f2f2;
+  --hover: #ffffff; /* ambiance button hover */
+  --accent: #818cf8;
+  --accent2: #dadada;
 }
 
 .green-theme {
   --bg: #0a0a0a;
   --text: #000000;
+  --text2: #0c5326;
   --card-bg: rgba(10, 10, 10, 0.5);
   --button-bg: #282828;
   --hover: #303030; /* ambiance button hover */
-  --accent: #22C55E;
-  --accent2: #383838;
+  --accent: #22c55e;
+  --accent2: #383838; /* 8 level diff from button-bg */
 }
 
 body {
