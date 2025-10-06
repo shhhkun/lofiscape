@@ -1,10 +1,11 @@
-import React, { useState, useEffect, useRef, useCallback } from "react";
+import React, { useState, useCallback } from "react";
 import {
   CloudRainIcon,
   CloudLightningIcon,
   WindIcon,
   WavesIcon,
   CampfireIcon,
+  CoffeeIcon,
 } from "@phosphor-icons/react";
 import VolumeBar from "./VolumeBar";
 import CrossfadeAmbiancePlayer from "./CrossfadeAmbiancePlayer";
@@ -15,6 +16,7 @@ const icon = {
   Wind: WindIcon,
   Waves: WavesIcon,
   Campfire: CampfireIcon,
+  "Coffee Shop": CoffeeIcon,
 };
 
 const AmbianceButton = ({ ambiance, audioUrl }) => {

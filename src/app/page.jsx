@@ -10,6 +10,7 @@ const AmbianceSounds = [
   { name: "Wind", fileUrl: "/wind.m4a" },
   { name: "Waves", fileUrl: "/waves.m4a" },
   { name: "Campfire", fileUrl: "/campfire.m4a" },
+  { name: "Coffee Shop", fileUrl: "/coffeeshop.m4a" },
 ];
 
 export default function HomePage() {
