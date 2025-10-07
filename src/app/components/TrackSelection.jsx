@@ -10,16 +10,16 @@ import {
 
 // song to youtube ID mappings
 const videoMap = {
-  song1: "OO2kPK5-qno",
-  song2: "X2V0ag9mCjc",
-  song3: "OO2kPK5-qno",
+  Cafe: "OO2kPK5-qno",
+  "Empty Road": "X2V0ag9mCjc",
+  Bedtime: "UJs6__K7gSY",
 };
 
 const TrackSelection = () => {
   const [isActive, setIsActive] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
   const [volume, setVolume] = useState(50); // 0 to 100
-  const [selectedTrack, setSelectedTrack] = useState("song1");
+  const [selectedTrack, setSelectedTrack] = useState("Cafe");
 
   const handleMute = useCallback(() => {
     const newIsMuted = !isMuted;
