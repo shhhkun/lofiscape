@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { SunIcon } from "@phosphor-icons/react";
+import { SunIcon, CheckIcon } from "@phosphor-icons/react";
 
 const THEMES = [
   {
@@ -54,7 +54,7 @@ const ThemeButton = ({ theme, setTheme }) => {
 
       {isOpen && (
         <div
-          className="absolute top-full mt-4 left-0 w-44 p-2 rounded-xl transition-all duration-300 transform origin-top opacity-100 scale-100 animate-fade-in"
+          className="absolute top-full mt-4 left-0 w-44 p-2 rounded-xl"
           style={{
             backgroundColor: "var(--card-bg)",
             border: `2px solid var(--accent)`,
@@ -87,7 +87,11 @@ const ThemeButton = ({ theme, setTheme }) => {
 
               {/* checkmark indicator */}
               {themeOption.key === theme && (
-                <span className="ml-auto text-[var(--accent)]">✓</span>
+                <CheckIcon
+                  size={18}
+                  weight="bold"
+                  className="ml-auto text-[var(--accent)]"
+                />
               )}
             </div>
           ))}

@@ -2,6 +2,7 @@ import React, { useState, useCallback } from "react";
 import PlayButton from "./PlayButton";
 import VolumeBar from "./VolumeBar";
 import YouTubePlayer from "./YoutubePlayer";
+import TrackDropdown from "./TrackDropdown";
 import {
   SpeakerSimpleHighIcon,
   SpeakerSimpleSlashIcon,
@@ -55,19 +56,14 @@ const TrackSelection = () => {
         <PlayButton isActive={isActive} onPlay={handlePlay} />
         <div className="flex flex-row w-full items-center gap-8">
           <div className="flex flex-col gap-2">
-            <p className="font-bold">LoFi Track:</p>
-            <select
-              className="text-[var(--text2)] bg-[var(--accent)] font-bold p-2 rounded-lg"
-              value={selectedTrack}
-              onChange={handleTrackChange}
-            >
-              {Object.keys(videoMap).map((key) => (
-                <option key={key} value={key}>
-                  Currently Playing {key.charAt(0).toUpperCase() + key.slice(1)}
-                </option>
-              ))}
-            </select>
+            <p className="font-bold ">LoFi Track:</p>
+            <TrackDropdown
+              selectedTrack={selectedTrack}
+              onTrackChange={handleTrackChange}
+              tracks={videoMap}
+            />
           </div>
+
           <div className="flex flex-row flex-1 gap-4">
             <button
               className="transition-transform duration-300 transform hover:scale-110"
