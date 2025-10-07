@@ -10,6 +10,10 @@ const THEMES = [
     key: "cloud-theme",
     label: "Cloud Light",
   },
+  {
+    key: "night-theme",
+    label: "Night",
+  },
 ];
 
 const ThemeButton = ({ theme, setTheme }) => {
@@ -39,10 +43,13 @@ const ThemeButton = ({ theme, setTheme }) => {
     <div ref={dropdownRef} className="relative z-20">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center justify-center p-2 flex-shrink-0 transition-transform duration-300 transform hover:scale-110
-                   text-[var(--accent)]"
+        className="flex items-center justify-center p-2 flex-shrink-0
+                   text-[var(--accent)]
+                   bg-[var(--card-bg)] rounded-full"
       >
-        <SunIcon size={32} weight="bold" />
+        <div className="transition-transform duration-300 transform hover:scale-110">
+          <SunIcon size={32} weight="bold" />
+        </div>
       </button>
 
       {isOpen && (
@@ -74,7 +81,9 @@ const ThemeButton = ({ theme, setTheme }) => {
               key={themeOption.key}
               onClick={() => handleThemeChange(themeOption.key)}
             >
-              <span className="ml-2 text-[var(--accent)]">{themeOption.label}</span>
+              <span className="ml-2 text-[var(--accent)]">
+                {themeOption.label}
+              </span>
 
               {/* checkmark indicator */}
               {themeOption.key === theme && (

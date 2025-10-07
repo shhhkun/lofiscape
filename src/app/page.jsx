@@ -18,7 +18,7 @@ const applyThemeClass = (themeKey) => {
   const element = document.documentElement; // for <html>
 
   // remove existing theme classes
-  element.classList.remove("green-theme", "cloud-theme");
+  element.classList.remove("green-theme", "cloud-theme", "night-theme");
 
   // add the new theme class
   element.classList.add(themeKey);

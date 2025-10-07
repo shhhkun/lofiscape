@@ -45,6 +45,17 @@
   --accent2: #383838; /* 8 level diff from button-bg */
 }
 
+.night-theme {
+  --bg: #0a0a0a;
+  --text: #9999b5;
+  --text2: #231737;
+  --card-bg: rgba(51, 51, 124, 0.5);
+  --button-bg: #171737;
+  --hover: #272747; /* ambiance button hover */
+  --accent: #634d8a;
+  --accent2: #696989;
+}
+
 body {
   background: var(--bg);
   color: var(--text);
