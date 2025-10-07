@@ -30,6 +30,7 @@
   --card-bg: rgba(184, 182, 182, 0.5);
   --button-bg: #f2f2f2;
   --hover: #ffffff; /* ambiance button hover */
+  --hover2: rgba(184, 182, 182, 0.2);
   --accent: #818cf8;
   --accent2: #dadada;
 }
@@ -41,6 +42,7 @@
   --card-bg: rgba(10, 10, 10, 0.5);
   --button-bg: #282828;
   --hover: #303030; /* ambiance button hover */
+  --hover2: rgba(10, 10, 10, 0.8); /* hover over card bg */
   --accent: #22c55e;
   --accent2: #383838; /* 8 level diff from button-bg */
 }
@@ -52,6 +54,7 @@
   --card-bg: rgba(23, 23, 55, 0.5);
   --button-bg: #171737;
   --hover: #272747; /* ambiance button hover */
+  --hover2: rgba(23, 23, 55, 0.8);
   --accent: #634d8a;
   --accent2: #362071;
 }

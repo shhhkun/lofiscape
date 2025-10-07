@@ -77,7 +77,7 @@ const ThemeButton = ({ theme, setTheme }) => {
 
           {THEMES.map((themeOption) => (
             <div
-              className="flex items-center font-bold p-2 rounded-lg cursor-pointer transition duration-200 text-[var(--text)] hover:bg-[var(--hover)]"
+              className="flex items-center font-bold p-2 rounded-lg cursor-pointer transition duration-200 text-[var(--text)] hover:bg-[var(--hover2)]"
               key={themeOption.key}
               onClick={() => handleThemeChange(themeOption.key)}
             >
