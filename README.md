@@ -2,7 +2,7 @@
 
 Curate your perfect productivity environment. Mix calming LoFi beats with custom ambient soundscapes—from rain to bustling cafes—and adjust the visual theme to match your mood or environment.
 
-[**Website**](in progress)
+[**Website**](https://lofiscape.vercel.app/)
 
 ## Features
 
