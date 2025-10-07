@@ -40,7 +40,7 @@ export default function HomePage() {
         </div>
 
         <div className="flex w-full justify-center mt-auto">
-          <div className="flex flex-row flex-wrap justify-center w-full items-center bg-[var(--card-bg)] backdrop-blur-xs p-6 gap-6">
+          <div className="flex flex-row flex-wrap justify-center w-full items-center bg-[var(--card-bg)] backdrop-blur-xs p-6 m-6 gap-6 rounded-xl">
             <TrackSelection />
 
             <div className="flex flex-row flex-wrap gap-6">
