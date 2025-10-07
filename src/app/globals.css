@@ -25,14 +25,14 @@
 
 .cloud-theme {
   --bg: #0a0a0a;
-  --text: #a8a8a8;
+  --text: #7494b6;
   --text2: #4c56aa;
   --card-bg: rgba(184, 182, 182, 0.5);
-  --button-bg: #f2f2f2;
-  --hover: #ffffff; /* ambiance button hover */
+  --button-bg: #EAEAFE;
+  --hover: #dadeee; /* ambiance button hover */
   --hover2: rgba(184, 182, 182, 0.2);
   --accent: #818cf8;
-  --accent2: #dadada;
+  --accent2: #c1d2e7;
 }
 
 .green-theme {
@@ -57,6 +57,18 @@
   --hover2: rgba(23, 23, 55, 0.8);
   --accent: #634d8a;
   --accent2: #362071;
+}
+
+.sunset-theme {
+  --bg: #0a0a0a;
+  --text: #f8a882;  
+  --text2: #df6405;
+  --card-bg: rgba(124, 51, 80, 0.5);
+  --button-bg: #322129;
+  --hover: #423139; /* ambiance button hover */
+  --hover2: rgba(124, 51, 80, 0.8);
+  --accent: #f78b43;
+  --accent2: #7c3350;
 }
 
 body {

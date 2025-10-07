@@ -4,15 +4,19 @@ import { SunIcon, CheckIcon } from "@phosphor-icons/react";
 const THEMES = [
   {
     key: "green-theme",
-    label: "Deep Green",
+    label: "Matrix",
   },
   {
     key: "cloud-theme",
-    label: "Cloud Light",
+    label: "Breeze",
   },
   {
     key: "night-theme",
     label: "Night",
+  },
+  {
+    key: "sunset-theme",
+    label: "Sunset",
   },
 ];
 
