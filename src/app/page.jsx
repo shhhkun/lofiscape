@@ -13,6 +13,11 @@ const AmbianceSounds = [
   { name: "Coffee Shop", fileUrl: "/coffeeshop.m4a" },
 ];
 
+const Backgrounds = [
+  { name: "Coffee Shop", video: "/coffee.mp4" },
+  { name: "Night City", video: "/nightcity.mp4" },
+];
+
 // function to apply the theme class to the document root
 const applyThemeClass = (themeKey) => {
   const element = document.documentElement; // for <html>
@@ -34,6 +39,9 @@ const applyThemeClass = (themeKey) => {
 
 export default function HomePage() {
   const [theme, setTheme] = useState("green-theme");
+  const [video, setVideo] = useState(Backgrounds[0].video);
+
+  const videoSourceUrl = video;
 
   // hook to detect theme changes
   useEffect(() => {
@@ -45,17 +53,30 @@ export default function HomePage() {
       <main className="flex flex-col min-h-dvh justify-between">
         {/* <main className="flex flex-col min-h-dvh bg-[url('/bg.jpg')] bg-cover justify-between"> */}
         <video
+          key={videoSourceUrl}
           className="fixed top-0 left-0 w-full h-full object-cover -z-10"
           loop
           muted
           autoPlay
           playsInline
         >
-          <source src="/Coffee.mp4" type="video/mp4" />
+          <source src={videoSourceUrl} type="video/mp4" />
         </video>
 
         <div className="m-6">
           <ThemeButton theme={theme} setTheme={setTheme} />
+
+          <select
+            value={video}
+            onChange={(e) => setVideo(e.target.value)}
+            className="px-4 py-2 rounded-xl bg-[var(--button-bg)]"
+          >
+            {Backgrounds.map((bg) => (
+              <option key={bg.video} value={bg.video}>
+                {bg.name}
+              </option>
+            ))}
+          </select>
         </div>
 
         <div className="flex w-full justify-center mt-auto">
