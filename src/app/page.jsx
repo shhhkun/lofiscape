@@ -42,7 +42,18 @@ export default function HomePage() {
 
   return (
     <div>
-      <main className="flex flex-col min-h-dvh bg-[url('/bg.jpg')] bg-cover justify-between">
+      <main className="flex flex-col min-h-dvh justify-between">
+        {/* <main className="flex flex-col min-h-dvh bg-[url('/bg.jpg')] bg-cover justify-between"> */}
+        <video
+          className="fixed top-0 left-0 w-full h-full object-cover -z-10"
+          loop
+          muted
+          autoPlay
+          playsInline
+        >
+          <source src="/Coffee.mp4" type="video/mp4" />
+        </video>
+
         <div className="m-6">
           <ThemeButton theme={theme} setTheme={setTheme} />
         </div>
