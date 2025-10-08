@@ -8,7 +8,7 @@ import {
   SpeakerSimpleSlashIcon,
 } from "@phosphor-icons/react";
 
-// song to youtube ID mappings
+// track to youtube ID & live background mapppings
 const videoMap = {
   Cafe: { youtubeId: "OO2kPK5-qno", videoUrl: "/coffee.mp4" },
   "Empty Road": { youtubeId: "X2V0ag9mCjc", videoUrl: "/nightcity.mp4" },
