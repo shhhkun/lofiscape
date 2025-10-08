@@ -2,15 +2,17 @@ import React, { useRef, useEffect, useState } from "react";
 
 const YOUTUBE_API_URL = "https://www.youtube.com/iframe_api";
 
-// global queue for API Ready Callbacks
-window.youtubeApiReadyCallbacks = window.youtubeApiReadyCallbacks || [];
-
 /**
  * Loads the YouTube IFrame Player API script only once
  * @returns {boolean} true if the YT object is available/loaded
  */
 const useYouTubeScriptLoader = () => {
   const [isLoaded, setIsLoaded] = useState(false);
+
+  if (typeof window !== "undefined") {
+    // queue for API Ready Callbacks
+    window.youtubeApiReadyCallbacks = window.youtubeApiReadyCallbacks || [];
+  }
 
   useEffect(() => {
     // 1. Handler function for when the API script finishes loading
