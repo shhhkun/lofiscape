@@ -34,7 +34,7 @@ const applyThemeClass = (themeKey) => {
 
 export default function HomePage() {
   const [theme, setTheme] = useState("green-theme");
-  const [video, setVideo] = useState("/coffee.mp4");
+  const [video, setVideo] = useState("/cafe.mp4");
 
   // hook to detect theme changes
   useEffect(() => {
