@@ -18,6 +18,10 @@ const THEMES = [
     key: "sunset-theme",
     label: "Sunset",
   },
+  {
+    key: "jade-theme",
+    label: "Verdant",
+  },
 ];
 
 const ThemeButton = ({ theme, setTheme }) => {

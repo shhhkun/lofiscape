@@ -22,7 +22,8 @@ const applyThemeClass = (themeKey) => {
     "green-theme",
     "cloud-theme",
     "night-theme",
-    "sunset-theme"
+    "sunset-theme",
+    "jade-theme"
   );
 
   // add the new theme class

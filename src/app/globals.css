@@ -71,6 +71,18 @@
   --accent2: #7c3350;
 }
 
+.jade-theme {
+  --bg: #0a0a0a;
+  --text: #3b4742;
+  --text2: #c8904a;
+  --card-bg: rgba(57, 89, 76, 0.5);
+  --button-bg: #507f6b;
+  --hover: #588d76; /* ambiance button hover */
+  --hover2: rgba(57, 89, 76, 0.8);
+  --accent: #f8cf82;
+  --accent2: #39594c;
+}
+
 body {
   background: var(--bg);
   color: var(--text);
