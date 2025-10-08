@@ -15,6 +15,7 @@ const videoMap = {
   Bedtime: { youtubeId: "UJs6__K7gSY", videoUrl: "/bedroom.mp4" },
   "Cozy Sunset": { youtubeId: "rm1FAQ2yPBo", videoUrl: "/streetsunset.mp4" },
   "Night Stroll": { youtubeId: "8ZeC-8klo_o", videoUrl: "/vending.mp4" },
+  "Seaside": { youtubeId: "nJM9p1KGr04", videoUrl: "/beachside.mp4" },
 };
 
 const TrackSelection = ({ setVideo }) => {
