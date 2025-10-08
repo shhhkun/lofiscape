@@ -10,12 +10,12 @@ import {
 
 // song to youtube ID mappings
 const videoMap = {
-  Cafe: "OO2kPK5-qno",
-  "Empty Road": "X2V0ag9mCjc",
-  Bedtime: "UJs6__K7gSY",
+  Cafe: { youtubeId: "OO2kPK5-qno", videoUrl: "/coffee.mp4" },
+  "Empty Road": { youtubeId: "X2V0ag9mCjc", videoUrl: "/nightcity.mp4" },
+  Bedtime: { youtubeId: "UJs6__K7gSY", videoUrl: "/coffee.mp4" },
 };
 
-const TrackSelection = () => {
+const TrackSelection = ({ setVideo }) => {
   const [isActive, setIsActive] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
   const [volume, setVolume] = useState(50); // 0 to 100
@@ -40,13 +40,17 @@ const TrackSelection = () => {
   );
 
   const handleTrackChange = useCallback((e) => {
-    setSelectedTrack(e.target.value);
-  }, []);
+    const trackName = e.target.value;
+    setSelectedTrack(trackName);
+
+    const newVideoUrl = videoMap[trackName].videoUrl;
+    setVideo(newVideoUrl);
+  }, [setVideo]);
 
   return (
     <>
       <YouTubePlayer
-        videoId={videoMap[selectedTrack]}
+        videoId={videoMap[selectedTrack].youtubeId}
         volume={volume}
         isMuted={isMuted}
         isActive={isActive}
