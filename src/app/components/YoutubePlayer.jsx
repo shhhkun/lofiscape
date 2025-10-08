@@ -2,6 +2,9 @@ import React, { useRef, useEffect, useState } from "react";
 
 const YOUTUBE_API_URL = "https://www.youtube.com/iframe_api";
 
+// global queue for API Ready Callbacks
+window.youtubeApiReadyCallbacks = window.youtubeApiReadyCallbacks || [];
+
 /**
  * Loads the YouTube IFrame Player API script only once
  * @returns {boolean} true if the YT object is available/loaded
@@ -10,18 +13,35 @@ const useYouTubeScriptLoader = () => {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    // 1. If YT is already defined (e.g., from a prior mount), it's ready
-    if (window.YT) {
+    // 1. Handler function for when the API script finishes loading
+    const handleAPILoaded = () => {
+      // check for the constructor function for absolute certainty
+      if (typeof window.YT?.Player === "function") {
+        setIsLoaded(true);
+      }
+    };
+
+    // 2. Check if the API is already defined (e.g., from a prior mount: YT.Player exists)
+    if (typeof window.YT?.Player === "function") {
       setIsLoaded(true);
       return;
     }
 
-    // 2. Define the global callback before inserting the script
-    window.onYouTubeIframeAPIReady = () => {
-      setIsLoaded(true);
-    };
+    // 3. Register our component's ready handler into the global queue
+    window.youtubeApiReadyCallbacks.push(handleAPILoaded);
 
-    // 3. Load the script only if it's not already loading
+    // 4. Define the global YouTube callback function (if it doesn't exist)
+    if (!window.onYouTubeIframeAPIReady) {
+      window.onYouTubeIframeAPIReady = () => {
+        // when the API loads, iterate through all queued callbacks and run them
+        while (window.youtubeApiReadyCallbacks.length > 0) {
+          const callback = window.youtubeApiReadyCallbacks.shift();
+          callback();
+        }
+      };
+    }
+
+    // 5. Load the script only if it's not already loading
     if (!document.querySelector(`script[src="${YOUTUBE_API_URL}"]`)) {
       const tag = document.createElement("script");
       tag.src = YOUTUBE_API_URL;
@@ -29,8 +49,13 @@ const useYouTubeScriptLoader = () => {
       firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
     }
 
-    // No cleanup needed (loaded once globally)
-    return () => {};
+    // cleanup: remove this component's handler from the queue on unmount
+    return () => {
+      const index = window.youtubeApiReadyCallbacks.indexOf(handleAPILoaded);
+      if (index > -1) {
+        window.youtubeApiReadyCallbacks.splice(index, 1);
+      }
+    };
   }, []);
 
   return isLoaded;
