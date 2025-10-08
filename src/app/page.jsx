@@ -33,7 +33,7 @@ const applyThemeClass = (themeKey) => {
 };
 
 export default function HomePage() {
-  const [theme, setTheme] = useState("green-theme");
+  const [theme, setTheme] = useState("night-theme");
   const [video, setVideo] = useState("/cafe.mp4");
 
   // hook to detect theme changes

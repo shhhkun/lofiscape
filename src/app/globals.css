@@ -2,33 +2,22 @@
 
 :root {
   --bg: #0a0a0a;
-  --text: #000000;
-  --text2: #0c5326;
-  --card-bg: rgba(10, 10, 10, 0.5);
-  --button-bg: #282828;
-  --hover: #303030; /* ambiance button hover */
-  --accent: #22c55e;
-  --accent2: #383838; /* 8 level diff from button-bg */
+  --text: #9999b5;
+  --text2: #231737;
+  --card-bg: rgba(23, 23, 55, 0.5);
+  --button-bg: #171737;
+  --hover: #272747; /* ambiance button hover */
+  --hover2: rgba(23, 23, 55, 0.8);
+  --accent: #634d8a;
+  --accent2: #362071;
 }
-
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #0a0a0a;
-    --text: #ffffff;
-    --card-bg: rgba(184, 182, 182, 0.5);
-    --button-bg: #d0d0d0;
-    --hover: #c0c0c0;
-    --accent: #818cf8;
-    --accent2: #4b5563;
-  }
-} */
 
 .cloud-theme {
   --bg: #0a0a0a;
   --text: #7494b6;
   --text2: #4c56aa;
   --card-bg: rgba(184, 182, 182, 0.5);
-  --button-bg: #EAEAFE;
+  --button-bg: #eaeafe;
   --hover: #dadeee; /* ambiance button hover */
   --hover2: rgba(184, 182, 182, 0.2);
   --accent: #818cf8;
@@ -61,7 +50,7 @@
 
 .sunset-theme {
   --bg: #0a0a0a;
-  --text: #f8a882;  
+  --text: #f8a882;
   --text2: #df6405;
   --card-bg: rgba(124, 51, 80, 0.5);
   --button-bg: #322129;
@@ -113,11 +102,4 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 
   transition: background-color 0.3s, color 0.3s;
-}
-
-.button-1 {
-  background-color: var(--button-bg);
-  color: var(--text);
-  padding: 24px 4px;
-  border-radius: 8px;
 }

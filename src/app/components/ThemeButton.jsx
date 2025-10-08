@@ -3,16 +3,16 @@ import { SunIcon, CheckIcon } from "@phosphor-icons/react";
 
 const THEMES = [
   {
+    key: "night-theme",
+    label: "Night",
+  },
+  {
     key: "green-theme",
     label: "Matrix",
   },
   {
     key: "cloud-theme",
     label: "Breeze",
-  },
-  {
-    key: "night-theme",
-    label: "Night",
   },
   {
     key: "sunset-theme",
