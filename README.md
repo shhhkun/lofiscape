@@ -10,11 +10,11 @@ Curate your perfect productivity environment. Mix calming LoFi beats with custom
 
 - **Seamless Looping:** Ambient sounds smoothly fade-in & fade-out for smooth zero distraction looping.
 
-- **Dynamic Theming:** Users can toggle between various color palettes and dynamic backgrounds.
+- **Dynamic Theming:** Live backgrounds for each track and toggleable color palette themes.
 
 ## Some Technologies Used
 
-- **Youtube iFrame Player API:** Used to play/pause/mute/unmute LoFi tracks (audio only).
+- **Youtube iFrame Player API:** Used to play, pause, mute, and unmute LoFi tracks.
 
 ## Running server
 
