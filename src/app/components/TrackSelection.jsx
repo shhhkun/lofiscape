@@ -13,6 +13,8 @@ const videoMap = {
   Cafe: { youtubeId: "OO2kPK5-qno", videoUrl: "/cafe.mp4" },
   "Empty Road": { youtubeId: "X2V0ag9mCjc", videoUrl: "/streetnight.mp4" },
   Bedtime: { youtubeId: "UJs6__K7gSY", videoUrl: "/bedroom.mp4" },
+  "Cozy Sunset": { youtubeId: "rm1FAQ2yPBo", videoUrl: "/streetsunset.mp4" },
+  "Night Stroll": { youtubeId: "8ZeC-8klo_o", videoUrl: "/vending.mp4" },
 };
 
 const TrackSelection = ({ setVideo }) => {
@@ -39,13 +41,16 @@ const TrackSelection = ({ setVideo }) => {
     [isMuted]
   );
 
-  const handleTrackChange = useCallback((e) => {
-    const trackName = e.target.value;
-    setSelectedTrack(trackName);
+  const handleTrackChange = useCallback(
+    (e) => {
+      const trackName = e.target.value;
+      setSelectedTrack(trackName);
 
-    const newVideoUrl = videoMap[trackName].videoUrl;
-    setVideo(newVideoUrl);
-  }, [setVideo]);
+      const newVideoUrl = videoMap[trackName].videoUrl;
+      setVideo(newVideoUrl);
+    },
+    [setVideo]
+  );
 
   return (
     <>
