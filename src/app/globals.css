@@ -83,6 +83,30 @@
   --accent2: #39594c;
 }
 
+.jstreet-theme {
+  --bg: #0a0a0a;
+  --text: #334941;
+  --text2: #9e9f74;
+  --card-bg: rgba(18, 61, 50, 0.5);
+  --button-bg: #4c6860;
+  --hover: #53746a; /* ambiance button hover */
+  --hover2: rgba(18, 61, 50, 0.8);
+  --accent: #e5e6a7;
+  --accent2: #38574d;
+}
+
+.neon-theme {
+  --bg: #0a0a0a;
+  --text: #793763;
+  --text2: #8d132a;
+  --card-bg: rgba(103, 16, 75, 0.5);
+  --button-bg: #895176;
+  --hover: #9e5a87; /* ambiance button hover */
+  --hover2: rgba(103, 16, 75, 0.8);
+  --accent: #d62142;
+  --accent2: #831529;
+}
+
 body {
   background: var(--bg);
   color: var(--text);

@@ -22,6 +22,14 @@ const THEMES = [
     key: "jade-theme",
     label: "Verdant",
   },
+  {
+    key: "jstreet-theme",
+    label: "Street Night",
+  },
+  {
+    key: "neon-theme",
+    label: "Neon",
+  },
 ];
 
 const ThemeButton = ({ theme, setTheme }) => {
