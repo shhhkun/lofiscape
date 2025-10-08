@@ -16,7 +16,7 @@ const videoMap = {
   "Cozy Sunset": { youtubeId: "rm1FAQ2yPBo", videoUrl: "/streetsunset.mp4" },
   "Night Stroll": { youtubeId: "8ZeC-8klo_o", videoUrl: "/vending.mp4" },
   Seaside: { youtubeId: "nJM9p1KGr04", videoUrl: "/beachside.mp4" },
-  Stargazing: { youtubeId: "N3ur5Ey21zg", videoUrl: "/totoro.mp4" },
+  Ghibli: { youtubeId: "N3ur5Ey21zg", videoUrl: "/totoro.mp4" },
 };
 
 const TrackSelection = ({ setVideo }) => {
