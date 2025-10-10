@@ -1,10 +1,10 @@
 import "./globals.css";
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata = {
   title: "Lo-Fi Scape",
   description:
-    "Customize your focus with layered ambient sounds and lofi music, designed for productivity and relaxation.",
+    "Curate your perfect productivity envrionment. Mix calming LoFi beats with custom ambient soundscapes, from gentle rain to a lively cafe.",
 };
 
 export default function RootLayout({ children }) {
