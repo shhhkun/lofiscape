@@ -1,8 +1,13 @@
 import { useState, useEffect } from "react";
 
+// iconSize1: for ambient button icons
+// iconSize2: for track mute/unmute icons
+// iconSize3: for theme icon
 const ResponsiveSize = () => {
   const [size, setSizes] = useState({
-    iconSize: 48,
+    iconSize1: 48,
+    iconSize2: 24,
+    iconSize3: 32,
   });
 
   useEffect(() => {
@@ -12,19 +17,27 @@ const ResponsiveSize = () => {
 
       if (windowWidth >= 1280) {
         newSizes = {
-          iconSize: 48,
+          iconSize1: 48,
+          iconSize2: 24,
+          iconSize3: 32,
         }; // xl size
       } else if (windowWidth >= 1024) {
         newSizes = {
-          iconSize: 40,
+          iconSize1: 40,
+          iconSize2: 22,
+          iconSize3: 30,
         }; // lg size
       } else if (windowWidth >= 640) {
         newSizes = {
-          iconSize: 32,
+          iconSize1: 32,
+          iconSize2: 20,
+          iconSize3: 28,
         }; // sm size
       } else {
         newSizes = {
-          iconSize: 32,
+          iconSize1: 32,
+          iconSize2: 20,
+          iconSize3: 28,
         }; // default size
       }
       setSizes(newSizes);

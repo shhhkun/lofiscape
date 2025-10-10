@@ -26,7 +26,7 @@ const AmbianceButton = ({ ambiance, audioUrl }) => {
 
   const IconImage = icon[ambiance];
 
-  const { iconSize } = ResponsiveSize();
+  const { iconSize1 } = ResponsiveSize();
 
   // handler sound on/off
   const handleToggle = useCallback(() => {
@@ -63,7 +63,7 @@ const AmbianceButton = ({ ambiance, audioUrl }) => {
             } 
             transition-transform duration-300 transform hover:scale-110`}
           >
-            <IconImage size={iconSize} weight="regular" />
+            <IconImage size={iconSize1} weight="regular" />
           </div>
           <span className="font-bold">{ambiance}</span>
         </div>

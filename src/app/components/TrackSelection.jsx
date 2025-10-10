@@ -7,6 +7,7 @@ import {
   SpeakerSimpleHighIcon,
   SpeakerSimpleSlashIcon,
 } from "@phosphor-icons/react";
+import ResponsiveSize from "./ResponsiveSize";
 
 // track to youtube ID & live background mapppings
 const videoMap = {
@@ -24,6 +25,8 @@ const TrackSelection = ({ setVideo }) => {
   const [isMuted, setIsMuted] = useState(false);
   const [volume, setVolume] = useState(50); // 0 to 100
   const [selectedTrack, setSelectedTrack] = useState("Cafe");
+
+  const { iconSize2 } = ResponsiveSize();
 
   const handleMute = useCallback(() => {
     const newIsMuted = !isMuted;
@@ -63,7 +66,7 @@ const TrackSelection = ({ setVideo }) => {
         isActive={isActive}
       />
 
-      <div className="flex flex-row items-center w-full lg:w-140 bg-[var(--button-bg)] p-4 rounded-lg gap-4">
+      <div className="flex flex-row items-center w-full xl:w-140 bg-[var(--button-bg)] p-4 rounded-lg gap-4">
         <PlayButton isActive={isActive} onPlay={handlePlay} />
         <div className="flex flex-row w-full items-center gap-8">
           <div className="flex flex-col gap-2">
@@ -81,9 +84,9 @@ const TrackSelection = ({ setVideo }) => {
               onClick={handleMute}
             >
               {isMuted ? (
-                <SpeakerSimpleSlashIcon size={24} weight="bold" />
+                <SpeakerSimpleSlashIcon size={iconSize2} weight="bold" />
               ) : (
-                <SpeakerSimpleHighIcon size={24} weight="bold" />
+                <SpeakerSimpleHighIcon size={iconSize2} weight="bold" />
               )}
             </button>
             <VolumeBar volume={volume} onVolumeChange={handleVolumeChange} />

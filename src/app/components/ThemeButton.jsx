@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { SunIcon, CheckIcon } from "@phosphor-icons/react";
+import ResponsiveSize from "./ResponsiveSize";
 
 const THEMES = [
   {
@@ -36,6 +37,8 @@ const ThemeButton = ({ theme, setTheme }) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
 
+  const { iconSize3 } = ResponsiveSize();
+
   // hook for outside clicks
   useEffect(() => {
     const handleOutsideClick = (event) => {
@@ -64,7 +67,7 @@ const ThemeButton = ({ theme, setTheme }) => {
                    bg-[var(--card-bg)] rounded-full"
       >
         <div className="transition-transform duration-300 transform hover:scale-110">
-          <SunIcon size={32} weight="bold" />
+          <SunIcon size={iconSize3} weight="bold" />
         </div>
       </button>
 
