@@ -9,6 +9,7 @@ import {
 } from "@phosphor-icons/react";
 import VolumeBar from "./VolumeBar";
 import CrossfadeAmbiancePlayer from "./CrossfadeAmbiancePlayer";
+import ResponsiveSize from "./ResponsiveSize";
 
 const icon = {
   Rain: CloudRainIcon,
@@ -24,6 +25,8 @@ const AmbianceButton = ({ ambiance, audioUrl }) => {
   const [volume, setVolume] = useState(50); // 0 to 100
 
   const IconImage = icon[ambiance];
+
+  const { iconSize } = ResponsiveSize();
 
   // handler sound on/off
   const handleToggle = useCallback(() => {
@@ -60,7 +63,7 @@ const AmbianceButton = ({ ambiance, audioUrl }) => {
             } 
             transition-transform duration-300 transform hover:scale-110`}
           >
-            <IconImage size={48} weight="regular" />
+            <IconImage size={iconSize} weight="regular" />
           </div>
           <span className="font-bold">{ambiance}</span>
         </div>
