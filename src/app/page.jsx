@@ -44,7 +44,6 @@ export default function HomePage() {
   return (
     <div>
       <main className="flex flex-col min-h-dvh justify-between">
-        {/* <main className="flex flex-col min-h-dvh bg-[url('/bg.jpg')] bg-cover justify-between"> */}
         <video
           key={video}
           className="fixed top-0 left-0 w-full h-full object-cover -z-10"

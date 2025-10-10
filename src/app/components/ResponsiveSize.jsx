@@ -23,19 +23,19 @@ const ResponsiveSize = () => {
         }; // xl size
       } else if (windowWidth >= 1024) {
         newSizes = {
-          iconSize1: 40,
+          iconSize1: 44,
           iconSize2: 22,
           iconSize3: 30,
         }; // lg size
       } else if (windowWidth >= 640) {
         newSizes = {
-          iconSize1: 32,
+          iconSize1: 36,
           iconSize2: 20,
           iconSize3: 28,
         }; // sm size
       } else {
         newSizes = {
-          iconSize1: 32,
+          iconSize1: 36,
           iconSize2: 20,
           iconSize3: 28,
         }; // default size
