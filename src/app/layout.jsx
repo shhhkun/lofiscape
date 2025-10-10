@@ -5,6 +5,9 @@ export const metadata = {
   title: "Lo-Fi Scape",
   description:
     "Curate your perfect productivity envrionment. Mix calming LoFi beats with custom ambient soundscapes, from gentle rain to a lively cafe.",
+  icons: {
+    icon: "/favicon.ico",
+  },
   openGraph: {
     title: "Lo-Fi Scape: Minimal Mixer for Focus",
     description:
