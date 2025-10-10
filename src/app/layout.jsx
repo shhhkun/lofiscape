@@ -9,7 +9,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${"green-theme"}`}>
+    <html lang="en" className={`${"night-theme"}`}>
       <body>
         <Analytics />
         {children}
