@@ -1,4 +1,5 @@
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next"
 
 export const metadata = {
   title: "Lo-Fi Scape",
@@ -9,7 +10,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${"green-theme"}`}>
-      <body>  
+      <body>
+        <Analytics />
         {children}
         <script src="https://www.youtube.com/iframe_api"></script>
       </body>
